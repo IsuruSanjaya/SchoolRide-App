@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,8 @@ public class DRegistration extends AppCompatActivity {
     private EditText edDname, edNic, etDvehicle, etDContactNo, etUsername, etPassword;
 
     private Button submitDriverBtn;
+    TextView DriverLog;
+
 
     private  String Dname, DNIC,DVehicle, DContactNo, DUsername, Dpassword ;
 
@@ -41,6 +44,8 @@ public class DRegistration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dregistration);
+
+
 
         //getting instance from firestore
 
@@ -53,7 +58,11 @@ public class DRegistration extends AppCompatActivity {
         etUsername = findViewById(R.id.idDUsername);
         etPassword = findViewById(R.id.idDpassword);
         submitDriverBtn = findViewById(R.id.idDbutton);
+        DriverLog = findViewById(R.id.DriverLog);
 
+        DriverLog.setOnClickListener(view ->{
+            startActivity(new Intent(DRegistration.this, DriverLogin.class));
+        });
 
         submitDriverBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +113,8 @@ public class DRegistration extends AppCompatActivity {
             // after the data addition is successful
             // we are displaying a success toast message.
             Toast.makeText(DRegistration.this, "Your details has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(DRegistration.this, DriverLogin.class));
+
         }
     }).addOnFailureListener(new OnFailureListener() {
         @Override

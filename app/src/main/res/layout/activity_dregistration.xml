@@ -11,7 +11,7 @@
         android:layout_width="293dp"
         android:layout_height="45dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="46dp"
         android:text="Driver Registration"
         android:textSize="34sp"
@@ -120,33 +120,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idDpassword" />
 
+    <Button
+        android:id="@+id/DriverLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Login In"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idDbutton" />
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/button">-->
 
-<!--        <TextView-->
+    <!--        <TextView-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
 <!--            android:text="Already registered"-->
 <!--            android:textSize="16sp" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/idDbutton"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="8dp"-->
-<!--            android:text="Login here"-->
-<!--            android:textColor="@color/teal_700"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
