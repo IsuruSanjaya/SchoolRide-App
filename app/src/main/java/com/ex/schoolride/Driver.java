@@ -1,10 +1,14 @@
 package com.ex.schoolride;
 
+import android.content.Context;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 public class Driver {
 
-    private  String Dname, DNIC,DVehicle, DContactNo, DUsername, Dpassword ;
+    private String Dname, DNIC, DVehicle, DContactNo, DUsername, Dpassword;
 
-    public Driver(){
+    public Driver() {
 
     }
 
@@ -18,7 +22,8 @@ public class Driver {
 
 
     }
-//getters
+
+    //getters
     public String getDname() {
         return Dname;
     }
@@ -69,4 +74,7 @@ public class Driver {
     public void setDpassword(String dpassword) {
         Dpassword = dpassword;
     }
+
+
+
 }
