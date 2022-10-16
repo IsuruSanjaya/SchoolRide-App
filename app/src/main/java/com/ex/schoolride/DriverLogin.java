@@ -34,6 +34,12 @@ public class DriverLogin extends AppCompatActivity {
         dusername = findViewById(R.id.etLoginEmail);
         dpassword = findViewById(R.id.etLoginPass);
         btnDLogin = findViewById(R.id.btnDLogin);
+        DRegisterHere = findViewById(R.id.DBtndriver);
+
+        DRegisterHere.setOnClickListener(view ->{
+            startActivity(new Intent(DriverLogin.this, DRegistration.class));
+        });
+
 
     }
 }
