@@ -85,70 +85,47 @@
 
 
     <EditText
-        android:id="@+id/idDUsername"
+        android:id="@+id/idDAge"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Driver's Age"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idDContactNo" />
 
-    <EditText
-        android:id="@+id/idDpassword"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idDUsername" />
-
     <Button
         android:id="@+id/idDbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
         android:text="Register"
-        app:layout_constraintEnd_toStartOf="@+id/DriverLog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/DriverbackBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idDpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/idDAge" />
 
     <Button
-        android:id="@+id/DriverLog"
+        android:id="@+id/DriverbackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:text="Login In"
-        app:layout_constraintEnd_toStartOf="@+id/button14"
-        app:layout_constraintStart_toEndOf="@+id/idDbutton"
-        app:layout_constraintTop_toBottomOf="@+id/idDpassword" />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
         android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/DriverLog"
-        app:layout_constraintTop_toBottomOf="@+id/idDpassword" />
+        app:layout_constraintStart_toEndOf="@+id/idDbutton"
+        app:layout_constraintTop_toBottomOf="@+id/idDAge" />
 
 
     <!--        <TextView-->

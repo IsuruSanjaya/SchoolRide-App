@@ -39,6 +39,9 @@ dependencies {
     implementation 'com.google.zxing:core:3.5.0'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

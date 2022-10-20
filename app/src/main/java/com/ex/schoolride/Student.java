@@ -2,20 +2,18 @@ package com.ex.schoolride;
 
 public class Student {
 
-    private String sName, sSchool, sAddress, sContactNo, sAge, sEmail, sPassword;
+    private String sName, sSchool, sAddress, sContactNo, sAge;
 
     public Student(){
 
     }
 
-    public Student(String sName, String sSchool, String sAddress, String sContactNo, String sAge, String sEmail, String sPassword) {
+    public Student(String sName, String sSchool, String sAddress, String sContactNo, String sAge) {
         this.sName = sName;
         this.sSchool = sSchool;
         this.sAddress = sAddress;
         this.sContactNo = sContactNo;
         this.sAge = sAge;
-        this.sEmail = sEmail;
-        this.sPassword = sPassword;
     }
 
     //getters
@@ -40,13 +38,7 @@ public class Student {
         return sAge;
     }
 
-    public String getsEmail() {
-        return sEmail;
-    }
 
-    public String getsPassword() {
-        return sPassword;
-    }
 
     //setters
 
@@ -70,12 +62,6 @@ public class Student {
         this.sAge = sAge;
     }
 
-    public void setsEmail(String sEmail) {
-        this.sEmail = sEmail;
-    }
 
-    public void setsPassword(String sPassword) {
-        this.sPassword = sPassword;
-    }
 }
 

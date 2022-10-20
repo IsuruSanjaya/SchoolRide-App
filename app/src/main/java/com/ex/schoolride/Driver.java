@@ -1,24 +1,19 @@
 package com.ex.schoolride;
 
-import android.content.Context;
-
-import androidx.recyclerview.widget.RecyclerView;
-
 public class Driver {
 
-    private String Dname, DNIC, DVehicle, DContactNo, DUsername, Dpassword;
+    private String Dname, DNIC, DVehicle, DContactNo, DAge;
 
     public Driver() {
 
     }
 
-    public Driver(String dname, String DNIC, String DVehicle, String DContactNo, String DUsername, String dpassword) {
+    public Driver(String dname, String DNIC, String DVehicle, String DContactNo, String DAge) {
         Dname = dname;
         this.DNIC = DNIC;
         this.DVehicle = DVehicle;
         this.DContactNo = DContactNo;
-        this.DUsername = DUsername;
-        Dpassword = dpassword;
+        this.DAge = DAge;
 
 
     }
@@ -40,13 +35,10 @@ public class Driver {
         return DContactNo;
     }
 
-    public String getDUsername() {
-        return DUsername;
+    public String getDAge() {
+        return DAge;
     }
 
-    public String getDpassword() {
-        return Dpassword;
-    }
 
     //setters
 
@@ -67,13 +59,10 @@ public class Driver {
         this.DContactNo = DContactNo;
     }
 
-    public void setDUsername(String DUsername) {
-        this.DUsername = DUsername;
+    public void setDAge(String DUsername) {
+        this.DAge = DAge;
     }
 
-    public void setDpassword(String dpassword) {
-        Dpassword = dpassword;
-    }
 
 
 

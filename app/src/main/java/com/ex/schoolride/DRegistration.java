@@ -1,42 +1,32 @@
 package com.ex.schoolride;
 
-import static android.content.ContentValues.TAG;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class DRegistration extends AppCompatActivity {
 
-    private EditText edDname, edNic, etDvehicle, etDContactNo, etUsername, etPassword;
+    private EditText edDname, edNic, etDvehicle, etDContactNo, etAge;
 
     private Button submitDriverBtn;
-    TextView DriverLog;
+    TextView DriverBack;
 
 
-    private  String Dname, DNIC,DVehicle, DContactNo, DUsername, Dpassword ;
+    private  String Dname, DNIC,DVehicle, DContactNo, DAge ;
 
     FirebaseAuth mAuth= FirebaseAuth.getInstance();
 
@@ -60,13 +50,12 @@ public class DRegistration extends AppCompatActivity {
         edNic = findViewById(R.id.idNic);
         etDvehicle = findViewById(R.id.idDvehicle);
         etDContactNo = findViewById(R.id.idDContactNo);
-        etUsername = findViewById(R.id.idDUsername);
-        etPassword = findViewById(R.id.idDpassword);
+        etAge = findViewById(R.id.idDAge);
         submitDriverBtn = findViewById(R.id.idDbutton);
-        DriverLog = findViewById(R.id.DriverLog);
+        DriverBack = findViewById(R.id.DriverbackBtn);
 
-        DriverLog.setOnClickListener(view ->{
-            startActivity(new Intent(DRegistration.this, DriverLogin.class));
+        DriverBack.setOnClickListener(view ->{
+            startActivity(new Intent(DRegistration.this, DriverHome.class));
         });
 
         submitDriverBtn.setOnClickListener(new View.OnClickListener() {
@@ -77,8 +66,7 @@ public class DRegistration extends AppCompatActivity {
                 DNIC = edNic.getText().toString();
                 DVehicle = etDvehicle.getText().toString();
                 DContactNo = etDContactNo.getText().toString();
-                DUsername = etUsername.getText().toString();
-                Dpassword = etPassword.getText().toString();
+                DAge = etAge.getText().toString();
 
                 //validation
 
@@ -90,33 +78,31 @@ public class DRegistration extends AppCompatActivity {
                     etDvehicle.setError("Username is required");
                 } else if (TextUtils.isEmpty(DContactNo)) {
                     etDContactNo.setError("Username is required");
-                } else if (TextUtils.isEmpty(DUsername)) {
-                    etUsername.setError("Username is required");
-                } else if (TextUtils.isEmpty(Dpassword)) {
-                    etPassword.setError("Username is required");
+                } else if (TextUtils.isEmpty(DAge)) {
+                    etAge.setError("Username is required");
                 } else {
                     //calling mehod to add data to fireabse
-                    addDataToFirestore(Dname, DNIC, DVehicle, DContactNo, DUsername, Dpassword);
+                    addDataToFirestore(Dname, DNIC, DVehicle, DContactNo, DAge);
                 }
 
             }
         });
     }
-        private void addDataToFirestore(String Dname, String DNIC,String DVehicle,String DContactNo,String DUsername,String Dpassword)
+        private void addDataToFirestore(String Dname, String DNIC,String DVehicle,String DContactNo,String DAge )
         {
     // creating a collection reference
     // for our Firebase Firetore database.
     CollectionReference dbDrivers = db.collection("Drivers");
 
     // adding our data to our courses object class.
-    Driver driver = new Driver(Dname, DNIC, DVehicle, DContactNo, DUsername, Dpassword);
+    Driver driver = new Driver(Dname, DNIC, DVehicle, DContactNo, DAge);
 
     // below method is use to add data to Firebase Firestore.
         dbDrivers.document(uid).set(driver).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(DRegistration.this, "Your details has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
-                   startActivity(new Intent(DRegistration.this, DriverLogin.class));
+                Toast.makeText(DRegistration.this, "Your details has been added ", Toast.LENGTH_SHORT).show();
+                   startActivity(new Intent(DRegistration.this, DriverProfile.class));
 
             }
         }).addOnFailureListener(new OnFailureListener() {
