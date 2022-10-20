@@ -16,4 +16,9 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="qr_code">qr_code</string>
+    <string name="enter_your_info">Enter your info</string>
+    <string name="generate_qr_code">Generate QR code</string>
+    <string name="table_layout_4_open">left table</string>
+    <string name="table_layout_4_open_shortcut">"right table "</string>
 </resources>

@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -36,6 +37,10 @@ public class DRegistration extends AppCompatActivity {
 
 
     private  String Dname, DNIC,DVehicle, DContactNo, DUsername, Dpassword ;
+
+    FirebaseAuth mAuth= FirebaseAuth.getInstance();
+
+    String uid = mAuth.getCurrentUser().getUid();
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -107,25 +112,21 @@ public class DRegistration extends AppCompatActivity {
     Driver driver = new Driver(Dname, DNIC, DVehicle, DContactNo, DUsername, Dpassword);
 
     // below method is use to add data to Firebase Firestore.
-        dbDrivers.add(driver).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-        @Override
-        public void onSuccess(DocumentReference documentReference) {
-            // after the data addition is successful
-            // we are displaying a success toast message.
-            Toast.makeText(DRegistration.this, "Your details has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(DRegistration.this, DriverLogin.class));
+        dbDrivers.document(uid).set(driver).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(DRegistration.this, "Your details has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
+                   startActivity(new Intent(DRegistration.this, DriverLogin.class));
 
-        }
-    }).addOnFailureListener(new OnFailureListener() {
-        @Override
-        public void onFailure(@NonNull Exception e) {
-            // this method is called when the data addition process is failed.
-            // displaying a toast message when data addition is failed.
-            Toast.makeText(DRegistration.this, "Fail to add course \n" + e, Toast.LENGTH_SHORT).show();
-        }
-    });
-
-
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // this method is called when the data addition process is failed.
+                    // displaying a toast message when data addition is failed.
+                    Toast.makeText(DRegistration.this, "Fail to add course \n" + e, Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }
