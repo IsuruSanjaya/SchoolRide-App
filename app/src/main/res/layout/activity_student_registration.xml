@@ -121,29 +121,15 @@
         app:layout_constraintTop_toBottomOf="@+id/idsPassword" />
 
     <EditText
-        android:id="@+id/idsEmail"
-        android:layout_width="335dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idSage" />
-
-    <EditText
         android:id="@+id/idsPassword"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="password"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idsEmail" />
@@ -159,5 +145,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/idStdLog"
         app:layout_constraintTop_toBottomOf="@+id/idsPassword" />
+
+    <EditText
+        android:id="@+id/idsEmail"
+        android:layout_width="335dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="38dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idSage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
