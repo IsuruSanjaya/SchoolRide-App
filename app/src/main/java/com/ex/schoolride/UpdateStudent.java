@@ -100,7 +100,7 @@ public class UpdateStudent extends AppCompatActivity {
 
     private void updateToFireStore(String sid, String sName, String sSchool, String sAddress, String sContactNo, String sAge){
 
-        db.collection("Students").document(sid).update("Name" , sName , "School" , sSchool,"Address",sAddress,"ContactNo",sContactNo,"Age",sAge)
+        db.collection("Students").document(sid).update("sName" , sName , "sSchool" , sSchool,"sAddress",sAddress,"sContactNo",sContactNo,"sAge",sAge)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -123,11 +123,11 @@ public class UpdateStudent extends AppCompatActivity {
 
         if (!sName.isEmpty() && !sSchool.isEmpty()){
             HashMap<String , Object> map = new HashMap<>();
-            map.put("name" , sName);
-            map.put("address" , sAddress);
-            map.put("age" , sAge);
-            map.put("contact" , sContactNo);
-            map.put("school" , sSchool);
+            map.put("sName" , sName);
+            map.put("sAddress" , sAddress);
+            map.put("sAge" , sAge);
+            map.put("sContactNo" , sContactNo);
+            map.put("sSchool" , sSchool);
 
 
             db.collection("Students").document(sid).set(map)

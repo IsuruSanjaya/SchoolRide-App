@@ -20,8 +20,10 @@ public class StudentProfile extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
     String sid;
-
+    private FirebaseFirestore db;
     Button SUpdateBtn;
+    Button SProfileBack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +34,21 @@ public class StudentProfile extends AppCompatActivity {
         edsAddress = findViewById(R.id.listsAddress);
         edsContactNo = findViewById(R.id.listsContactNo);
         edsAge = findViewById(R.id.listSage);
-        SUpdateBtn=findViewById(R.id.idSUpdateBtn);
+        SUpdateBtn = findViewById(R.id.idSUpdateBtn);
+        SProfileBack = findViewById(R.id.idSProfilebackBtn);
+
+        SProfileBack.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), StudentHome.class));
+        });
 
 
-        SUpdateBtn.setOnClickListener(view ->{
-            startActivity(new Intent(getApplicationContext(),UpdateStudent.class));
+        SUpdateBtn.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), UpdateStudent.class));
         });
 
         mAuth = FirebaseAuth.getInstance();
-        fStore =FirebaseFirestore.getInstance();
-        sid=mAuth.getCurrentUser().getUid();
+        fStore = FirebaseFirestore.getInstance();
+        sid = mAuth.getCurrentUser().getUid();
 
 
         DocumentReference documentReference = fStore.collection("Students").document(sid);
@@ -56,6 +63,8 @@ public class StudentProfile extends AppCompatActivity {
 
 
             }
+
+
         });
     }
 }
