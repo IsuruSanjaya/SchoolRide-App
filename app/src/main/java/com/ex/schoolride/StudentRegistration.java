@@ -54,11 +54,17 @@ public class StudentRegistration extends AppCompatActivity {
         StdBack = findViewById(R.id.idStdback);
         submitStdBtn = findViewById(R.id.idSbutton);
 
+
+        submitStdBtn.setOnClickListener(view ->{
+            startActivity(new Intent(StudentRegistration.this, StudentHome.class));
+        });
+
         StdBack.setOnClickListener(view ->{
             startActivity(new Intent(StudentRegistration.this, StudentHome.class));
         });
 
         submitStdBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 //getting data from edit text fields

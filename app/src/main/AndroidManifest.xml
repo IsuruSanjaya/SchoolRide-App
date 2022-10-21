@@ -17,6 +17,18 @@
         android:theme="@style/Theme.SchoolRide"
         tools:targetApi="31">
         <activity
+            android:name=".VehicleRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentAdd"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateStudent"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserProfile"
             android:exported="false" />
         <activity
@@ -24,9 +36,6 @@
             android:exported="false" />
         <activity
             android:name=".VehicleQr"
-            android:exported="false" />
-        <activity
-            android:name=".StudentLogin"
             android:exported="false" />
         <activity
             android:name=".StudentRegistration"
@@ -38,10 +47,10 @@
             android:name=".StudentHome"
             android:exported="false" />
         <activity
-            android:name=".DriverLogin"
+            android:name=".DRegistration"
             android:exported="false" />
         <activity
-            android:name=".DRegistration"
+            android:name=".StudentProfile"
             android:exported="false" />
         <activity
             android:name=".Register"
@@ -54,17 +63,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
     </application>
 

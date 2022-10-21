@@ -1,8 +1,13 @@
 package com.ex.schoolride;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class StudentHome extends AppCompatActivity {
 
@@ -10,5 +15,26 @@ public class StudentHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_home);
+
+        Button logout = findViewById(R.id.logoutbtn);
+        Button Sregi= findViewById(R.id.SRegiBtn);
+        Button Sprofile= findViewById(R.id.sProfileBtn);
+
+        Sprofile.setOnClickListener(View ->{
+            startActivity(new Intent(getApplicationContext(), StudentProfile.class));
+        });
+
+        Sregi.setOnClickListener(View ->{
+            startActivity(new Intent(StudentHome.this, StudentRegistration.class));
+        });
+
+
+        logout.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), Login.class));
+            }
+        });
     }
 }

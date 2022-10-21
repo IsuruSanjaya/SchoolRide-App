@@ -1,56 +1,44 @@
 package com.ex.schoolride;
 
-import android.os.Bundle;
-import android.widget.TextView;
+import static android.content.ContentValues.TAG;
 
-import androidx.annotation.Nullable;
+import android.os.Bundle;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class StudentList extends AppCompatActivity {
-     TextView edSname, edsSchool, edsAddress, edsContactNo, edsAge, edsEmail,edsPassword;
-     FirebaseAuth fAuth;
-     FirebaseFirestore fStore;
-     String sid;
+    private FirebaseFirestore db;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list);
+        db = FirebaseFirestore.getInstance();
 
-        edSname = findViewById(R.id.listsName);
-        edsSchool = findViewById(R.id.listsSchool);
-//        edsAddress = findViewById(R.id.listsAddress);
-//        edsContactNo = findViewById(R.id.listsContactNo);
-//        edsAge = findViewById(R.id.listSage);
-//        edsEmail = findViewById(R.id.listsEmail);
-
-        fAuth = FirebaseAuth.getInstance();
-        fStore =FirebaseFirestore.getInstance();
-         sid=fAuth.getCurrentUser().getUid();
-
-
-        DocumentReference documentReference = fStore.collection("Students").document(sid);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                edSname.setText(documentSnapshot.getString("sName"));
-                edsSchool.setText(documentSnapshot.getString("sSchool"));
-//                edsAddress.setText(documentSnapshot.getString("sAddress"));
-//                edsContactNo.setText(documentSnapshot.getString("sContactNo"));
-//                edsAge.setText(documentSnapshot.getString("sAge"));
-//                edsEmail.setText(documentSnapshot.getString("sEmail"));
-
-
-            }
-        });
+        db.collection("Students")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
     }
 }
