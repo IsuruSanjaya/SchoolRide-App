@@ -17,6 +17,21 @@
         android:theme="@style/Theme.SchoolRide"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateVehicleProfile"
+            android:exported="false" />
+        <activity
+            android:name=".VehicleProfile"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateDriver"
+            android:exported="false" />
+        <activity
+            android:name=".DriverProfile"
+            android:exported="false" />
+        <activity
+            android:name=".vehicleHome"
+            android:exported="false" />
+        <activity
             android:name=".VehicleRegistration"
             android:exported="false" />
         <activity
@@ -27,9 +42,6 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UserProfile"
             android:exported="false" />
         <activity
             android:name=".StudentList"
@@ -64,6 +76,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

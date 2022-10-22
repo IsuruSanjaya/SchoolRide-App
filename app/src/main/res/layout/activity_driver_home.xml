@@ -30,10 +30,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/DBtnProfile" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/DBtnProfile"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/DregisBtn"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintTop_toBottomOf="@+id/DregisBtn" />
 
     <Button
         android:id="@+id/button11"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button17" />
+        app:layout_constraintTop_toBottomOf="@+id/DvehicBtn" />
 
     <Button
         android:id="@+id/Dlogoutbtn"
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button11" />
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/DvehicBtn"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -107,4 +107,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="409dp"
+        android:layout_height="649dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/driverhome" />
 </androidx.constraintlayout.widget.ConstraintLayout>

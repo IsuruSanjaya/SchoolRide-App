@@ -34,7 +34,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/listsName"
+                android:id="@+id/idvname"
                 android:layout_width="252dp"
                 android:layout_height="50dp"
                 android:padding="3dip"
@@ -49,7 +49,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/listsContactNo"
+                android:id="@+id/idvtype"
                 android:layout_width="252dp"
                 android:layout_height="50dp"
                 android:padding="3dip"
@@ -64,7 +64,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/listsSchool"
+                android:id="@+id/idvinsurance"
                 android:layout_width="252dp"
                 android:layout_height="50dp"
                 android:padding="3dip"
@@ -79,7 +79,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/listsAddress"
+                android:id="@+id/idvlicense"
                 android:layout_width="252dp"
                 android:layout_height="50dp"
                 android:padding="3dip"
@@ -94,7 +94,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/listSage"
+                android:id="@+id/idvno"
                 android:layout_width="252dp"
                 android:layout_height="50dp"
                 android:padding="3dip"

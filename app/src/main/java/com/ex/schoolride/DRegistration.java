@@ -26,7 +26,7 @@ public class DRegistration extends AppCompatActivity {
     TextView DriverBack;
 
 
-    private  String Dname, DNIC,DVehicle, DContactNo, DAge ;
+    private  String DName, DNIC,DVehicle, DContactNo, DAge ;
 
     FirebaseAuth mAuth= FirebaseAuth.getInstance();
 
@@ -62,7 +62,7 @@ public class DRegistration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //getting data from edit text fields
-                Dname = edDname.getText().toString();
+                DName = edDname.getText().toString();
                 DNIC = edNic.getText().toString();
                 DVehicle = etDvehicle.getText().toString();
                 DContactNo = etDContactNo.getText().toString();
@@ -70,7 +70,7 @@ public class DRegistration extends AppCompatActivity {
 
                 //validation
 
-                if (TextUtils.isEmpty(Dname)) {
+                if (TextUtils.isEmpty(DName)) {
                     edDname.setError("Enter a name ");
                 } else if (TextUtils.isEmpty(DNIC)) {
                     edNic.setError("Username is required");
@@ -82,20 +82,20 @@ public class DRegistration extends AppCompatActivity {
                     etAge.setError("Username is required");
                 } else {
                     //calling mehod to add data to fireabse
-                    addDataToFirestore(Dname, DNIC, DVehicle, DContactNo, DAge);
+                    addDataToFirestore(DName, DNIC, DVehicle, DContactNo, DAge);
                 }
 
             }
         });
     }
-        private void addDataToFirestore(String Dname, String DNIC,String DVehicle,String DContactNo,String DAge )
+        private void addDataToFirestore(String DName, String DNIC,String DVehicle,String DContactNo,String DAge )
         {
     // creating a collection reference
     // for our Firebase Firetore database.
     CollectionReference dbDrivers = db.collection("Drivers");
 
     // adding our data to our courses object class.
-    Driver driver = new Driver(Dname, DNIC, DVehicle, DContactNo, DAge);
+    Driver driver = new Driver(DName, DNIC, DVehicle, DContactNo, DAge);
 
     // below method is use to add data to Firebase Firestore.
         dbDrivers.document(uid).set(driver).addOnSuccessListener(new OnSuccessListener<Void>() {

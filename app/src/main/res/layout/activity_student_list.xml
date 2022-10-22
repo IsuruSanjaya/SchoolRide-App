@@ -35,21 +35,14 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/listsName"
-                android:layout_width="136dp"
+                android:id="@+id/idvname"
+                android:layout_width="385dp"
+                android:layout_height="606dp"
                 android:padding="3dip"
                 android:text="@string/table_layout_4_open"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/listsSchool"
-                android:layout_width="270dp"
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/table_layout_4_open_shortcut"
-                android:textColor="#000000"
-                android:textSize="16sp" />
         </TableRow>
 
         <!--        <TableRow>-->

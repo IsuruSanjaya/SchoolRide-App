@@ -39,13 +39,13 @@ public class UpdateStudent extends AppCompatActivity {
         setContentView(R.layout.activity_update_student);
         db = FirebaseFirestore.getInstance();
 
-        edSname = findViewById(R.id.idsName);
-        edsSchool = findViewById(R.id.idsSchool);
-        edsAddress = findViewById(R.id.idsAddress);
-        edsContactNo = findViewById(R.id.idsContactNo);
-        edsAge = findViewById(R.id.idSage);
-        mSaveBtn = findViewById(R.id.idSavedBtn);
-        mShowBtn = findViewById(R.id.idShowBtn);
+        edSname = findViewById(R.id.iduvName);
+        edsSchool = findViewById(R.id.iduvNic);
+        edsAddress = findViewById(R.id.iduvvehicle);
+        edsContactNo = findViewById(R.id.iduvLicenseNo);
+        edsAge = findViewById(R.id.iduvVNo);
+        mSaveBtn = findViewById(R.id.iduvbutton);
+        mShowBtn = findViewById(R.id.iduvShow);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){

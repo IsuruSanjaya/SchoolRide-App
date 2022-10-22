@@ -29,11 +29,11 @@ public class StudentProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
-        edSname = findViewById(R.id.listsName);
-        edsSchool = findViewById(R.id.listsSchool);
-        edsAddress = findViewById(R.id.listsAddress);
-        edsContactNo = findViewById(R.id.listsContactNo);
-        edsAge = findViewById(R.id.listSage);
+        edSname = findViewById(R.id.idvname);
+        edsSchool = findViewById(R.id.idvinsurance);
+        edsAddress = findViewById(R.id.idvlicense);
+        edsContactNo = findViewById(R.id.idvtype);
+        edsAge = findViewById(R.id.idvno);
         SUpdateBtn = findViewById(R.id.idSUpdateBtn);
         SProfileBack = findViewById(R.id.idSProfilebackBtn);
 

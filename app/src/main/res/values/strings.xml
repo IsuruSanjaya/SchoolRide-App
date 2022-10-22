@@ -23,4 +23,8 @@
     <string name="table_layout_4_open_shortcut">"right table "</string>
     <string name="Edit_Vehicle">Edit</string>
     <string name="Save_Vehicle">Save</string>
+    <string name="Setting_">setting</string>
+    <string name="Profile_Btn">Profile</string>
+    <string name="Payment_">Payment</string>
+    <string name="Monthly_payment">Monthly Payment</string>
 </resources>

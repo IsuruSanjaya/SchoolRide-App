@@ -1,6 +1,7 @@
 package com.ex.schoolride;
 
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.Button;
@@ -25,6 +26,12 @@ public class VehicleQr extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_qr);
+
+        Button QrBack= findViewById(R.id.QrBackBtn);
+
+        QrBack.setOnClickListener(view ->{
+            startActivity(new Intent(VehicleQr.this,vehicleHome.class));
+        });
 
         qrCodeIv = findViewById(R.id.idIVQrcode);
         dataEdt = findViewById(R.id.idEdt);

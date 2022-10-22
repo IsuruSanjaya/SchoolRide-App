@@ -127,6 +127,18 @@
         app:layout_constraintStart_toEndOf="@+id/idDbutton"
         app:layout_constraintTop_toBottomOf="@+id/idDAge" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="375dp"
+        android:layout_height="217dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idDAge"
+        app:srcCompat="@drawable/dregistration" />
+
 
     <!--        <TextView-->
 <!--            android:layout_width="wrap_content"-->

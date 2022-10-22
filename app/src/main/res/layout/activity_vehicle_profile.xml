@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DriverProfile">
+    tools:context=".VehicleProfile">
 
     <ImageView
         android:id="@+id/imageView16"
@@ -167,7 +167,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Nic"
+        android:text="Type"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imageView13"
@@ -175,11 +175,11 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="111dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:text="Vehicle"
+        android:text="Insurance Date"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imageView14"
@@ -187,11 +187,11 @@
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="28dp"
-        android:text="ContactNo"
+        android:layout_marginTop="16dp"
+        android:text="Liecense No"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imageView15"
@@ -202,8 +202,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="29dp"
-        android:text="Age"
+        android:layout_marginTop="8dp"
+        android:text="V-No"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imageView16"
@@ -226,7 +226,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="51dp"
-        android:text="Driver Profile"
+        android:text="Vehicle  Profile"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -249,7 +249,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="32dp"
         android:text="Update"
         app:layout_constraintEnd_toStartOf="@+id/vbackBtn"

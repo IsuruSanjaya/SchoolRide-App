@@ -7,7 +7,7 @@
     tools:context=".UpdateStudent">
 
     <EditText
-        android:id="@+id/idsName"
+        android:id="@+id/iduvName"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <EditText
-        android:id="@+id/idsSchool"
+        android:id="@+id/iduvNic"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -32,10 +32,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idsName" />
+        app:layout_constraintTop_toBottomOf="@+id/iduvName" />
 
     <EditText
-        android:id="@+id/idsAddress"
+        android:id="@+id/iduvvehicle"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -46,10 +46,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idsSchool" />
+        app:layout_constraintTop_toBottomOf="@+id/iduvNic" />
 
     <EditText
-        android:id="@+id/idsContactNo"
+        android:id="@+id/iduvLicenseNo"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -60,10 +60,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idsAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/iduvvehicle" />
 
     <EditText
-        android:id="@+id/idSage"
+        android:id="@+id/iduvVNo"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -74,20 +74,20 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idsContactNo" />
+        app:layout_constraintTop_toBottomOf="@+id/iduvLicenseNo" />
 
     <Button
-        android:id="@+id/idSavedBtn"
+        android:id="@+id/iduvbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="88dp"
         android:text="Save"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idSage" />
+        app:layout_constraintTop_toBottomOf="@+id/iduvVNo" />
 
     <Button
-        android:id="@+id/idShowBtn"
+        android:id="@+id/iduvShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="63dp"
@@ -96,8 +96,8 @@
         android:text="Show"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/idSavedBtn"
-        app:layout_constraintTop_toBottomOf="@+id/idSage" />
+        app:layout_constraintStart_toEndOf="@+id/iduvbutton"
+        app:layout_constraintTop_toBottomOf="@+id/iduvVNo" />
 
     <TextView
         android:id="@+id/textView14"

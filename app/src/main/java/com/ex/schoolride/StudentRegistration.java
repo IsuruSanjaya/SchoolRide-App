@@ -46,11 +46,11 @@ public class StudentRegistration extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
-        edSname = findViewById(R.id.idsName);
-        edsSchool = findViewById(R.id.idsSchool);
-        edsAddress = findViewById(R.id.idsAddress);
-        edsContactNo = findViewById(R.id.idsContactNo);
-        edsAge = findViewById(R.id.idSage);
+        edSname = findViewById(R.id.iduvName);
+        edsSchool = findViewById(R.id.iduvNic);
+        edsAddress = findViewById(R.id.iduvvehicle);
+        edsContactNo = findViewById(R.id.iduvLicenseNo);
+        edsAge = findViewById(R.id.iduvVNo);
         StdBack = findViewById(R.id.idStdback);
         submitStdBtn = findViewById(R.id.idSbutton);
 

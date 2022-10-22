@@ -1,14 +1,74 @@
 package com.ex.schoolride;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
 public class DriverProfile extends AppCompatActivity {
+     TextView edDname, edNic, etDvehicle, etDContactNo, etAge;
+
+    private Button updateDriverBtn;
+    TextView DriverHomeB;
+
+
+
+    FirebaseAuth mAuth;
+
+    FirebaseFirestore fStore;
+    String uid;
+    private FirebaseFirestore db;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_profile);
+
+        edDname = findViewById(R.id.idvname);
+        edNic = findViewById(R.id.idvtype);
+        etDvehicle = findViewById(R.id.idvinsurance);
+        etDContactNo = findViewById(R.id.idvlicense);
+        etAge = findViewById(R.id.idvno);
+        updateDriverBtn = findViewById(R.id.idvrbutton);
+        DriverHomeB = findViewById(R.id.vbackBtn);
+
+        updateDriverBtn.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), UpdateDriver.class));
+        });
+
+        DriverHomeB.setOnClickListener(view ->{
+            startActivity(new Intent(DriverProfile.this, DriverHome.class));
+        });
+        mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        uid = mAuth.getCurrentUser().getUid();
+        DocumentReference documentReference = fStore.collection("Drivers").document(uid);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                edDname.setText(documentSnapshot.getString("DName"));
+                edNic.setText(documentSnapshot.getString("DNIC"));
+                etDvehicle.setText(documentSnapshot.getString("DVehicle"));
+                etDContactNo.setText(documentSnapshot.getString("DContactNo"));
+                etAge.setText(documentSnapshot.getString("DAge"));
+
+
+            }
+
+
+        });
+
     }
 }

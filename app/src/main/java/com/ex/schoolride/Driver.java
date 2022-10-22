@@ -2,14 +2,14 @@ package com.ex.schoolride;
 
 public class Driver {
 
-    private String Dname, DNIC, DVehicle, DContactNo, DAge;
+    private String DName, DNIC, DVehicle, DContactNo, DAge;
 
     public Driver() {
 
     }
 
-    public Driver(String dname, String DNIC, String DVehicle, String DContactNo, String DAge) {
-        Dname = dname;
+    public Driver(String DName, String DNIC, String DVehicle, String DContactNo, String DAge) {
+        this.DName = DName;
         this.DNIC = DNIC;
         this.DVehicle = DVehicle;
         this.DContactNo = DContactNo;
@@ -19,8 +19,8 @@ public class Driver {
     }
 
     //getters
-    public String getDname() {
-        return Dname;
+    public String getDName() {
+        return DName;
     }
 
     public String getDNIC() {
@@ -43,8 +43,8 @@ public class Driver {
     //setters
 
 
-    public void setDname(String dname) {
-        Dname = dname;
+    public void setDName(String DName) {
+        DName = DName;
     }
 
     public void setDNIC(String DNIC) {
