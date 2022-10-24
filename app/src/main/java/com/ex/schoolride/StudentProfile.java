@@ -75,7 +75,6 @@ public class StudentProfile extends AppCompatActivity {
 
             }
 
-
         });
 
         documentReference1.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -86,5 +85,8 @@ public class StudentProfile extends AppCompatActivity {
                 pfees.setText(documentSnapshot.getString( "fee"));
             }
         });
+
+
+
     }
 }

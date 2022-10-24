@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/TermsBtn"
         android:layout_width="410dp"
         android:layout_height="60dp"
         android:layout_marginTop="64dp"
@@ -47,5 +47,5 @@
         android:text="Contact Us"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/TermsBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
