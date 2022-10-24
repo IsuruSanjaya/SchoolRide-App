@@ -17,12 +17,24 @@ public class DriverHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_home);
 
+        getSupportActionBar().setTitle("School Ride");
 
-         logout = findViewById(R.id.Dlogoutbtn);
+
+        logout = findViewById(R.id.Dlogoutbtn);
          Vehic = findViewById(R.id.DvehicBtn);
          Dregister = findViewById(R.id.DregisBtn);
         DprofileBtn =findViewById(R.id.DBtnProfile);
-        Dsettings=findViewById(R.id.dSettingsBtn);
+        Dsettings=findViewById(R.id.idDsetting);
+        Button Dsettings = findViewById(R.id.idDsetting);
+        Button DinEx=findViewById(R.id.iebtn);
+
+        DinEx.setOnClickListener(View ->{
+            startActivity(new Intent(getApplicationContext(),incomeAndExpense.class));
+        });
+
+        Dsettings.setOnClickListener(View ->{
+            startActivity(new Intent(getApplicationContext(), Settings.class));
+        });
 
 
         Dsettings.setOnClickListener(view->{

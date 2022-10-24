@@ -20,6 +20,13 @@ public class StudentHome extends AppCompatActivity {
         Button Sregi= findViewById(R.id.SRegiBtn);
         Button Sprofile= findViewById(R.id.sProfileBtn);
         Button PayBtn = findViewById(R.id.PayBtnP);
+        Button FSet= findViewById(R.id.idPSettingbtn);
+
+        getSupportActionBar().setTitle("School Ride");
+
+        FSet.setOnClickListener(View ->{
+            startActivity(new Intent(StudentHome.this,Settings.class));
+        });
 
        Button Calc=findViewById(R.id.CalBtn);
 

@@ -40,6 +40,10 @@ public class UpdateDriver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_driver);
 
+        getSupportActionBar().setTitle("School Ride");
+
+
+
         edDname = findViewById(R.id.iduvName);
         edNic = findViewById(R.id.iduvNic);
         etDvehicle = findViewById(R.id.iduvvehicle);

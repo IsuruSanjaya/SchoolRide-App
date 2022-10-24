@@ -26,6 +26,8 @@ public class DistanceCalculation extends AppCompatActivity {
         PResult = findViewById(R.id.idresult);
         Add=findViewById(R.id.Padd);
         Home = findViewById(R.id.idHome);
+        getSupportActionBar().setTitle("School Ride");
+
 
         Home.setOnClickListener(View ->{
             startActivity(new Intent(getApplicationContext(), StudentHome.class));

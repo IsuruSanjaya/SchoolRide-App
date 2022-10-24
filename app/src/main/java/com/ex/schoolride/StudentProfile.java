@@ -31,6 +31,10 @@ public class StudentProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
+
+        getSupportActionBar().setTitle("School Ride");
+
+
         edSname = findViewById(R.id.idvname);
         edsSchool = findViewById(R.id.idvinsurance);
         edsAddress = findViewById(R.id.idvlicense);
@@ -39,6 +43,7 @@ public class StudentProfile extends AppCompatActivity {
 
         pDate=findViewById(R.id.idmonthsF);
         pfees=findViewById(R.id.idpFeess);
+//        Button delete=findViewById(R.id.DeleteBtn);
 
 
         SUpdateBtn = findViewById(R.id.idSUpdateBtn);
@@ -85,6 +90,28 @@ public class StudentProfile extends AppCompatActivity {
                 pfees.setText(documentSnapshot.getString( "fee"));
             }
         });
+
+//       delete.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//           public void onClick(View v) {
+//               fStore.collection("Students").document("uid")
+//                       .delete()
+//                       .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                           @Override
+//                           public void onSuccess(Void aVoid) {
+////                               Log.d(TAG, "DocumentSnapshot successfully deleted!");
+//                               startActivity(new Intent(getApplicationContext(),StudentHome.class));
+//                               finish();
+//                           }
+//                       })
+//                       .addOnFailureListener(new OnFailureListener() {
+//                           @Override
+//                           public void onFailure(@NonNull Exception e) {
+////                               Log.w(TAG, "Error deleting document", e);
+//                           }
+//                       });
+//           }
+//       });
 
 
 

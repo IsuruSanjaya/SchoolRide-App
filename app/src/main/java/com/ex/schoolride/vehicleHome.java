@@ -12,11 +12,13 @@ public class vehicleHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_home);
+        getSupportActionBar().setTitle("School Ride");
+
 
         Button Qrcode=findViewById(R.id.CalBtn);
         Button VRegi = findViewById(R.id.PayBtnP);
         Button VProfileBtn=findViewById(R.id.idvProfile);
-        Button BBackHomeV = findViewById(R.id.BackVehi);
+        Button BBackHomeV = findViewById(R.id.idPSettingbtn);
 
         BBackHomeV.setOnClickListener(view ->{
             startActivity(new Intent(vehicleHome.this,DriverHome.class));

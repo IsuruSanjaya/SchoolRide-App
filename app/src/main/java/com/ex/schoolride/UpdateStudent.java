@@ -37,6 +37,9 @@ public class UpdateStudent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_student);
+
+        getSupportActionBar().setTitle("School Ride");
+
         db = FirebaseFirestore.getInstance();
 
         edSname = findViewById(R.id.iduvName);

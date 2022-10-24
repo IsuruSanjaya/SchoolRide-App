@@ -39,6 +39,9 @@ public class VehicleRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_registration);
 
+        getSupportActionBar().setTitle("School Ride");
+
+
         //getting instance from firestore
 
         db = FirebaseFirestore.getInstance();

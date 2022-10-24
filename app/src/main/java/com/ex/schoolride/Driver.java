@@ -3,6 +3,7 @@ package com.ex.schoolride;
 public class Driver {
 
     private String DName, DNIC, DVehicle, DContactNo, DAge;
+    private String Id;
 
     public Driver() {
 
@@ -64,6 +65,7 @@ public class Driver {
     }
 
 
-
-
+    public String getId() {
+        return Id;
+    }
 }

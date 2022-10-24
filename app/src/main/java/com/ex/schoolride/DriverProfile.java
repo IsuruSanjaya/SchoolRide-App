@@ -35,6 +35,8 @@ public class DriverProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_profile);
+        getSupportActionBar().setTitle("School Ride");
+
 
         edDname = findViewById(R.id.idvname);
         edNic = findViewById(R.id.idvtype);
@@ -43,12 +45,17 @@ public class DriverProfile extends AppCompatActivity {
         etAge = findViewById(R.id.idvno);
         updateDriverBtn = findViewById(R.id.idvrbutton);
         DriverHomeB = findViewById(R.id.vbackBtn);
+//        Button deleteBtn = findViewById(R.id.iddeleteBtn);
+
+
+
+        
 
         updateDriverBtn.setOnClickListener(view -> {
             startActivity(new Intent(getApplicationContext(), UpdateDriver.class));
         });
 
-        DriverHomeB.setOnClickListener(view ->{
+        DriverHomeB.setOnClickListener(view -> {
             startActivity(new Intent(DriverProfile.this, DriverHome.class));
         });
         mAuth = FirebaseAuth.getInstance();
@@ -69,6 +76,6 @@ public class DriverProfile extends AppCompatActivity {
 
 
         });
-
     }
-}
+
+        }

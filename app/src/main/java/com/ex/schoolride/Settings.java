@@ -15,6 +15,7 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        getSupportActionBar().setTitle("School Ride");
 
                 Button logout = findViewById(R.id.slogoutbtn);
                 Button Terms = findViewById(R.id.TermsBtn);

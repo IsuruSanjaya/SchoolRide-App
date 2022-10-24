@@ -40,6 +40,9 @@ public class StudentRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_registration);
 
+        getSupportActionBar().setTitle("School Ride");
+
+
 
 
         //getting instance from firestore

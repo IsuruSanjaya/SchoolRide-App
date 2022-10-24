@@ -27,6 +27,8 @@ public class VehicleQr extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_qr);
 
+        getSupportActionBar().setTitle("School Ride");
+
         Button QrBack= findViewById(R.id.QrBackBtn);
 
         QrBack.setOnClickListener(view ->{

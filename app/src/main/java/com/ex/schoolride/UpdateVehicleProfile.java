@@ -32,6 +32,9 @@ public class UpdateVehicleProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_vehicle_profile);
 
+        getSupportActionBar().setTitle("School Ride");
+
+
         edvname = findViewById(R.id.iduvName);
         edvType = findViewById(R.id.iduvNic);
         etvInsuranceD = findViewById(R.id.iduvvehicle);

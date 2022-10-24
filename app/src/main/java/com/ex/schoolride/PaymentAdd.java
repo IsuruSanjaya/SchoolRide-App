@@ -40,6 +40,9 @@ public class PaymentAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_add);
 
+        getSupportActionBar().setTitle("School Ride");
+
+
         pDate= findViewById(R.id.idDatep);
         pfees=findViewById(R.id.idpFees);
         ShowP=findViewById(R.id.showPayBtn);

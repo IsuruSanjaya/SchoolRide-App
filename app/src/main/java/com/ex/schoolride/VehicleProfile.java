@@ -29,6 +29,8 @@ public class VehicleProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_profile);
+        getSupportActionBar().setTitle("School Ride");
+
 
         edvname = findViewById(R.id.idvname);
         edvType = findViewById(R.id.idvtype);
