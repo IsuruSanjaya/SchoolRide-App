@@ -13,8 +13,8 @@ public class vehicleHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_home);
 
-        Button Qrcode=findViewById(R.id.BtnQrcode);
-        Button VRegi = findViewById(R.id.idVRegiBtn);
+        Button Qrcode=findViewById(R.id.CalBtn);
+        Button VRegi = findViewById(R.id.PayBtnP);
         Button VProfileBtn=findViewById(R.id.idvProfile);
         Button BBackHomeV = findViewById(R.id.BackVehi);
 

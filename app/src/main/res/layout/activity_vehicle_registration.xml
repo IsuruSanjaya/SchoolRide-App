@@ -39,7 +39,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Vehicle Name" />
+            android:hint="Vehicle Name" />
 
         <EditText
             android:id="@+id/vtype"
@@ -48,7 +48,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Vehicle Type" />
+            android:hint="Vehicle Type" />
 
         <EditText
             android:id="@+id/etvInsuranceD"
@@ -57,7 +57,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Insurance Date" />
+            android:hint="Insurance Date" />
 
         <EditText
             android:id="@+id/vlicense"
@@ -66,7 +66,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Liensce number" />
+            android:hint="Liensce number" />
 
         <EditText
             android:id="@+id/etVehicleNo"
@@ -75,7 +75,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Vehicle Number" />
+            android:hint="Vehicle Number" />
 
     </LinearLayout>
 

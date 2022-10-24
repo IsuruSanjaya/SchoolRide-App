@@ -16,13 +16,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class StudentProfile extends AppCompatActivity {
-    TextView edSname, edsSchool, edsAddress, edsContactNo, edsAge;
+    TextView edSname, edsSchool, edsAddress, edsContactNo, edsAge,pDate, pfees;
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
     String sid;
     private FirebaseFirestore db;
     Button SUpdateBtn;
     Button SProfileBack;
+    String uid;
+
 
 
     @Override
@@ -34,6 +36,11 @@ public class StudentProfile extends AppCompatActivity {
         edsAddress = findViewById(R.id.idvlicense);
         edsContactNo = findViewById(R.id.idvtype);
         edsAge = findViewById(R.id.idvno);
+
+        pDate=findViewById(R.id.idmonthsF);
+        pfees=findViewById(R.id.idpFeess);
+
+
         SUpdateBtn = findViewById(R.id.idSUpdateBtn);
         SProfileBack = findViewById(R.id.idSProfilebackBtn);
 
@@ -49,9 +56,13 @@ public class StudentProfile extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         sid = mAuth.getCurrentUser().getUid();
+        uid = mAuth.getCurrentUser().getUid();
+
 
 
         DocumentReference documentReference = fStore.collection("Students").document(sid);
+        DocumentReference documentReference1=fStore.collection("Payment").document(uid);
+
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
@@ -65,6 +76,15 @@ public class StudentProfile extends AppCompatActivity {
             }
 
 
+        });
+
+        documentReference1.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+
+                pDate.setText(documentSnapshot.getString("date"));
+                pfees.setText(documentSnapshot.getString( "fee"));
+            }
         });
     }
 }

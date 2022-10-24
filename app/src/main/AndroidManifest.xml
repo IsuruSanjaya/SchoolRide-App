@@ -17,6 +17,9 @@
         android:theme="@style/Theme.SchoolRide"
         tools:targetApi="31">
         <activity
+            android:name=".DistanceCalculation"
+            android:exported="false" />
+        <activity
             android:name=".UpdateVehicleProfile"
             android:exported="false" />
         <activity

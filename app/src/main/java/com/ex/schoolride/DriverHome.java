@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class DriverHome extends AppCompatActivity {
-    Button logout,Vehic,Dregister, DprofileBtn;
+    Button logout,Vehic,Dregister, DprofileBtn , Dsettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,12 @@ public class DriverHome extends AppCompatActivity {
          Vehic = findViewById(R.id.DvehicBtn);
          Dregister = findViewById(R.id.DregisBtn);
         DprofileBtn =findViewById(R.id.DBtnProfile);
+        Dsettings=findViewById(R.id.dSettingsBtn);
+
+
+        Dsettings.setOnClickListener(view->{
+            startActivity(new Intent(DriverHome.this,Settings.class));
+        });
 
         DprofileBtn.setOnClickListener(view ->{
             startActivity(new Intent(DriverHome.this,DriverProfile.class));

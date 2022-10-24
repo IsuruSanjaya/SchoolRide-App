@@ -8,13 +8,14 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="111dp"
+        android:layout_width="232dp"
         android:layout_height="49dp"
         android:layout_marginTop="76dp"
         android:fontFamily="sans-serif-black"
         android:text="Driver Home"
+        android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -70,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/DregisBtn" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/dSettingsBtn"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -94,7 +95,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/dSettingsBtn" />
 
     <Button
         android:id="@+id/DvehicBtn"
@@ -114,6 +115,7 @@
         android:layout_height="649dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="2dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

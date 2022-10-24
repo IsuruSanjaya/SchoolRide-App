@@ -19,6 +19,16 @@ public class StudentHome extends AppCompatActivity {
         Button logout = findViewById(R.id.logoutbtn);
         Button Sregi= findViewById(R.id.SRegiBtn);
         Button Sprofile= findViewById(R.id.sProfileBtn);
+        Button PayBtn = findViewById(R.id.PayBtnP);
+
+       Button Calc=findViewById(R.id.CalBtn);
+
+        Calc.setOnClickListener(View ->{
+            startActivity(new Intent(getApplicationContext(),DistanceCalculation.class));
+        });
+        PayBtn.setOnClickListener(View ->{
+            startActivity(new Intent(getApplicationContext(),PaymentAdd.class));
+        });
 
         Sprofile.setOnClickListener(View ->{
             startActivity(new Intent(getApplicationContext(), StudentProfile.class));

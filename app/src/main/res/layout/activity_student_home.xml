@@ -7,42 +7,29 @@
     android:background="#FFFFFF"
     tools:context=".StudentHome">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifImageView4"
-        android:layout_width="265dp"
-        android:layout_height="137dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="60dp"
-        android:background="#fff"
-        android:src="@drawable/sthome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/idVRegiBtn"
+        android:id="@+id/PayBtnP"
         android:layout_width="170dp"
         android:layout_height="120dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="16dp"
         android:text="Payment"
-        app:layout_constraintEnd_toStartOf="@+id/BtnQrcode"
+        app:layout_constraintEnd_toStartOf="@+id/CalBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gifImageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <Button
-        android:id="@+id/BtnQrcode"
+        android:id="@+id/CalBtn"
         android:layout_width="170dp"
         android:layout_height="122dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="16dp"
-        android:text="Monthly Payment"
+        android:text="Calculate Distance"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/idVRegiBtn"
-        app:layout_constraintTop_toBottomOf="@+id/gifImageView4" />
+        app:layout_constraintStart_toEndOf="@+id/PayBtnP"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <Button
         android:id="@+id/sProfileBtn"
@@ -54,7 +41,7 @@
         android:text="Profile"
         app:layout_constraintEnd_toStartOf="@+id/BackVehi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idVRegiBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/PayBtnP" />
 
     <Button
         android:id="@+id/BackVehi"
@@ -70,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/sProfileBtn"
-        app:layout_constraintTop_toBottomOf="@+id/BtnQrcode"
+        app:layout_constraintTop_toBottomOf="@+id/CalBtn"
          />
 
     <Button
@@ -98,5 +85,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BackVehi" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="91dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Student Home"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
