@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VehicleProfile">
+    tools:context=".VehicleProfile"
+
+    android:background="@drawable/app2"
+    >
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -184,7 +187,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20"
-        app:srcCompat="@drawable/dregistration" />
+        app:srcCompat="@drawable/ppp" />
 
     <Button
         android:id="@+id/idvrbutton"

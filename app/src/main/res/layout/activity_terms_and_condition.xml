@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".termsAndCondition">
+    tools:context=".termsAndCondition"
+    android:background="@drawable/app2"
+    >
 
     <TextView
         android:id="@+id/textView27"
@@ -15,6 +17,7 @@
         android:layout_marginEnd="13dp"
         android:text="The Google Play Developer Distribution Agreement requires that you grant your users a &quot;nonexclusive, worldwide, and perpetual license to perform, display, and use the Product on the Device.&quot;  You could cover this in the End-User License Agreement (EULA) or cover it in your Terms and Conditions agreement along with other clauses that are useful for your Android app."
         android:textAlignment="viewStart"
+        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +43,7 @@
           appointment information, delivery and shipping notifications, product and service updates, and marketing.Safety, Security,
            And Integrity. We work to protect the safety, security, and integrity of our Services.  "
         android:textAlignment="viewStart"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
