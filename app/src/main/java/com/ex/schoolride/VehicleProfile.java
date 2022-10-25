@@ -1,13 +1,21 @@
 package com.ex.schoolride;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -39,6 +47,7 @@ public class VehicleProfile extends AppCompatActivity {
         etVehicleNo = findViewById(R.id.idvno);
         upvehicleBtn = findViewById(R.id.idvrbutton);
         VehiHomeB = findViewById(R.id.vbackBtn);
+        Button VdeleteBtn=findViewById(R.id.idVDeleteBtn);
 
         upvehicleBtn.setOnClickListener(view -> {
             startActivity(new Intent(getApplicationContext(), UpdateVehicleProfile.class));
@@ -66,5 +75,30 @@ public class VehicleProfile extends AppCompatActivity {
 
 
         });
+
+        VdeleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fStore.collection("Vehicles").document(uid)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "Account details successfully deleted!");
+                                Toast.makeText(VehicleProfile.this, "Successfully deleted", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), vehicleHome.class));
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error deleting ", e);
+                            }
+                        });
+            }
+        });
+
+
+
     }
 }

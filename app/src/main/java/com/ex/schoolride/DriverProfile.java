@@ -1,13 +1,21 @@
 package com.ex.schoolride;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -45,7 +53,7 @@ public class DriverProfile extends AppCompatActivity {
         etAge = findViewById(R.id.idvno);
         updateDriverBtn = findViewById(R.id.idvrbutton);
         DriverHomeB = findViewById(R.id.vbackBtn);
-//        Button deleteBtn = findViewById(R.id.iddeleteBtn);
+        Button deleteBtn = findViewById(R.id.iddeleteBtn);
 
 
 
@@ -76,6 +84,33 @@ public class DriverProfile extends AppCompatActivity {
 
 
         });
-    }
 
-        }
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fStore.collection("Drivers").document(uid)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "Account details successfully deleted!");
+                                Toast.makeText(DriverProfile.this, "Successfully deleted", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(),DriverHome.class));
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error deleting ", e);
+                            }
+                        });
+
+
+            }
+        });
+
+
+
+    }
+}

@@ -38,7 +38,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:text="Profile"
+        app:layout_constraintBottom_toTopOf="@+id/SRegiBtn"
         app:layout_constraintEnd_toStartOf="@+id/idPSettingbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PayBtnP" />
@@ -50,15 +52,16 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/setting"
-        android:backgroundTint="#00FFFFFF"
 
+        android:backgroundTint="#00FFFFFF"
         android:text="Settings"
+        app:layout_constraintBottom_toTopOf="@+id/SRegiBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/sProfileBtn"
-        app:layout_constraintTop_toBottomOf="@+id/CalBtn"
-         />
+        app:layout_constraintTop_toBottomOf="@+id/CalBtn" />
 
     <Button
         android:id="@+id/logoutbtn"

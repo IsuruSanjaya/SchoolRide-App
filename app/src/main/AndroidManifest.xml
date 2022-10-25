@@ -56,9 +56,6 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentList"
-            android:exported="false" />
-        <activity
             android:name=".VehicleQr"
             android:exported="false" />
         <activity

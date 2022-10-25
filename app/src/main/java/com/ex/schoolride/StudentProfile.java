@@ -1,13 +1,21 @@
 package com.ex.schoolride;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -43,7 +51,7 @@ public class StudentProfile extends AppCompatActivity {
 
         pDate=findViewById(R.id.idmonthsF);
         pfees=findViewById(R.id.idpFeess);
-//        Button delete=findViewById(R.id.DeleteBtn);
+        Button SdeleteBtn=findViewById(R.id.DeleteBtn);
 
 
         SUpdateBtn = findViewById(R.id.idSUpdateBtn);
@@ -90,30 +98,30 @@ public class StudentProfile extends AppCompatActivity {
                 pfees.setText(documentSnapshot.getString( "fee"));
             }
         });
-
-//       delete.setOnClickListener(new View.OnClickListener() {
-//           @Override
-//           public void onClick(View v) {
-//               fStore.collection("Students").document("uid")
-//                       .delete()
-//                       .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                           @Override
-//                           public void onSuccess(Void aVoid) {
-////                               Log.d(TAG, "DocumentSnapshot successfully deleted!");
-//                               startActivity(new Intent(getApplicationContext(),StudentHome.class));
-//                               finish();
-//                           }
-//                       })
-//                       .addOnFailureListener(new OnFailureListener() {
-//                           @Override
-//                           public void onFailure(@NonNull Exception e) {
-////                               Log.w(TAG, "Error deleting document", e);
-//                           }
-//                       });
-//           }
-//       });
+        SdeleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fStore.collection("Students").document(sid)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "Account details successfully deleted!");
+                                Toast.makeText(StudentProfile.this, "Successfully deleted", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), StudentHome.class));
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error deleting ", e);
+                            }
+                        });
+            }
+        });
 
 
 
     }
 }
+
