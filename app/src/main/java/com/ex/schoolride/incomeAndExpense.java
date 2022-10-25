@@ -1,5 +1,6 @@
 package com.ex.schoolride;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,9 @@ public class incomeAndExpense extends AppCompatActivity {
         Cal = findViewById(R.id.idCalBtn);
         BHome=findViewById(R.id.idBhomeBtn);
         IEexpense=findViewById(R.id.idIExpense);
+        BHome.setOnClickListener(View ->{
+            startActivity(new Intent(getApplicationContext(),DriverHome.class));
+        });
 
         Cal.setOnClickListener(new View.OnClickListener() {
             @Override
