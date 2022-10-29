@@ -62,7 +62,7 @@ public class PaymentAdd extends AppCompatActivity {
                 //validation
 
                 if (TextUtils.isEmpty(date)) {
-                    pDate.setError("Enter a name ");
+                    pDate.setError("Enter a date ");
                 } else {
                     //calling mehod to add data to fireabse
                     addDataToFirestore(date, fee);
