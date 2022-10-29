@@ -19,6 +19,11 @@ public class Settings extends AppCompatActivity {
 
                 Button logout = findViewById(R.id.slogoutbtn);
                 Button Terms = findViewById(R.id.TermsBtn);
+                Button USetting=findViewById(R.id.usettingBtn);
+
+                USetting.setOnClickListener(View ->{
+                    startActivity(new Intent(getApplicationContext(), UserProfile.class));
+                });
 
                 Terms.setOnClickListener(View ->{
                     startActivity(new Intent(getApplicationContext(),termsAndCondition.class));

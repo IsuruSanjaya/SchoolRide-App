@@ -11,12 +11,12 @@
         android:id="@+id/button"
         android:layout_width="410dp"
         android:layout_height="60dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="44dp"
         android:text="Privacy policy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/usettingBtn" />
 
     <Button
         android:id="@+id/slogoutbtn"
@@ -49,4 +49,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TermsBtn" />
+
+    <Button
+        android:id="@+id/usettingBtn"
+        android:layout_width="410dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="64dp"
+        android:text="UserProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,12 @@
         android:theme="@style/Theme.SchoolRide"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateUser"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".incomeAndExpense"
             android:exported="false" />
         <activity

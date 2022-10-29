@@ -130,4 +130,7 @@
     <string name="liecense_no">Liecense No</string>
     <string name="v_no">V-No</string>
     <string name="update">Update</string>
+    <string name="User_Email">User Email</string>
+    <string name="PhoneNo">Phone No</string>
+    <string name="Full_Name">Full Name</string>
 </resources>
