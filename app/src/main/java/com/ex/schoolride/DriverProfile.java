@@ -73,11 +73,11 @@ public class DriverProfile extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                edDname.setText(documentSnapshot.getString("DName"));
-                edNic.setText(documentSnapshot.getString("DNIC"));
-                etDvehicle.setText(documentSnapshot.getString("DVehicle"));
-                etDContactNo.setText(documentSnapshot.getString("DContactNo"));
-                etAge.setText(documentSnapshot.getString("DAge"));
+                edDname.setText(documentSnapshot.getString("dname"));
+                edNic.setText(documentSnapshot.getString("dnic"));
+                etDvehicle.setText(documentSnapshot.getString("dvehicleNo"));
+                etDContactNo.setText(documentSnapshot.getString("dcontactNo"));
+                etAge.setText(documentSnapshot.getString("dage"));
 
 
             }

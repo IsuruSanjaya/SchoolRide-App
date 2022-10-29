@@ -8,13 +8,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.HashMap;
 
@@ -49,6 +53,32 @@ public class UpdateStudent extends AppCompatActivity {
         edsAge = findViewById(R.id.iduvVNo);
         mSaveBtn = findViewById(R.id.iduvbutton);
         mShowBtn = findViewById(R.id.iduvShow);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+        db.collection("Students").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(error == null){
+                    Student student =new Student (
+                            value.getString("sName"),
+                            value.getString("sSchool"),
+                            value.getString("sAddress"),
+                            value.getString("sContactNo"),
+                            value.getString("sAge")
+                    );
+                    edSname.setText(student.getsName());
+                    edsSchool.setText(student.getsSchool());
+                    edsAddress.setText(student.getsAddress());
+                    edsContactNo.setText(student.getsContactNo());
+                    edsAge.setText(student.getsAge());
+
+
+                }
+            }
+        });
+
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){

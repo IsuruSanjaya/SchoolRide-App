@@ -47,7 +47,10 @@ public class VehicleProfile extends AppCompatActivity {
         etVehicleNo = findViewById(R.id.idvno);
         upvehicleBtn = findViewById(R.id.idvrbutton);
         VehiHomeB = findViewById(R.id.vbackBtn);
-        Button VdeleteBtn=findViewById(R.id.idVDeleteBtn);
+        Button VdeleteBtn  =findViewById(R.id.idVDeleteBtn);
+
+
+
 
         upvehicleBtn.setOnClickListener(view -> {
             startActivity(new Intent(getApplicationContext(), UpdateVehicleProfile.class));

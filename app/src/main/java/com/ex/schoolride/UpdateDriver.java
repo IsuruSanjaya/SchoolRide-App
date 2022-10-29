@@ -9,13 +9,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.HashMap;
 
@@ -51,6 +55,30 @@ public class UpdateDriver extends AppCompatActivity {
         etAge = findViewById(R.id.iduvVNo);
         dSaveBtn = findViewById(R.id.iduvbutton);
         dShowBtn = findViewById(R.id.iduvShow);
+FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+db.collection("Drivers").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
+    @Override
+    public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+        if(error == null){
+            Driver driver =new Driver (
+                    value.getString("dname"),
+                    value.getString("dnic"),
+                    value.getString("dage"),
+                    value.getString("dvehicleNo"),
+                    value.getString("dvehicleNo")
+                    );
+            edDname.setText(driver.getDName());
+            edNic.setText(driver.getDNIC());
+            etAge.setText(driver.getDAge());
+            etDvehicle.setText(driver.getDVehicle());
+            etDContactNo.setText(driver.getDVehicle());
+
+
+        }
+    }
+});
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
             dSaveBtn.setText("Update");
@@ -104,7 +132,7 @@ public class UpdateDriver extends AppCompatActivity {
 
     private void updateToFireStore(String uid,String DName,String DNIC,String DVehicle,String DContactNo,String DAge){
 
-        db.collection("Drivers").document(uid).update("DName" , DName , "DNIC" , DNIC,"DVehicle",DVehicle,"DContactNo",DContactNo,"DAge",DAge)
+        db.collection("Drivers").document(uid).update("dname" , DName , "dnic" , DNIC,"dvehicleNo",DVehicle,"dcontactNo",DContactNo,"dage",DAge)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -127,11 +155,11 @@ public class UpdateDriver extends AppCompatActivity {
 
         if (!DName.isEmpty() && !DNIC.isEmpty()){
             HashMap<String , Object> map = new HashMap<>();
-            map.put("DName" , DName);
-            map.put("DNIC" , DNIC);
-            map.put("DVehicle" , DVehicle);
-            map.put("DContactNo" , DContactNo);
-            map.put("DAge" , DAge);
+            map.put("dname" , DName);
+            map.put("dnic" , DNIC);
+            map.put("dvehicleNo" , DVehicle);
+            map.put("dcontactNo" , DContactNo);
+            map.put("dage" , DAge);
 
 
             db.collection("Drivers").document(uid).set(map)

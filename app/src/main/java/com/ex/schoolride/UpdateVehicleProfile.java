@@ -8,13 +8,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.HashMap;
 
@@ -42,6 +46,33 @@ public class UpdateVehicleProfile extends AppCompatActivity {
         etVehicleNo = findViewById(R.id.iduvVNo);
         vSaveBTN = findViewById(R.id.iduvbutton);
         vShowBtn = findViewById(R.id.iduvShow);
+
+
+        FirebaseFirestore db  = FirebaseFirestore.getInstance();
+
+
+        db.collection("Vehicles").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(error == null){
+                    Vehicle vehicle =new Vehicle (
+                            value.getString("name"),
+                            value.getString("type"),
+                            value.getString("insuranceD"),
+                            value.getString("vLicenseNo"),
+                            value.getString("vehicleNo")
+                    );
+                    edvname.setText(vehicle.getName());
+                    edvType.setText(vehicle.getType());
+                    etvInsuranceD.setText(vehicle.getinsuranceD());
+                    etvLicenseNo.setText(vehicle.getvLicenseNo());
+                    etVehicleNo.setText(vehicle.getvehicleNo());
+
+
+                }
+            }
+        });
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
             vSaveBTN.setText("Update");
