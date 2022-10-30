@@ -1,7 +1,10 @@
 package com.ex.schoolride;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -88,7 +91,7 @@ public class Login extends AppCompatActivity {
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                Log.d(TAG, "Onsuccess"+ documentSnapshot.getData());
+                Log.d(TAG, "Onsuccess"+ documentSnapshot.getData());
 
                 //IDENTIFY THE USER ACCESS
 
