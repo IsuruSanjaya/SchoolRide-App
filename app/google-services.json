@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "573547430619",
-    "project_id": "schoolrideapp-69b97",
-    "storage_bucket": "schoolrideapp-69b97.appspot.com"
+    "project_number": "588684059815",
+    "project_id": "schoolappride",
+    "storage_bucket": "schoolappride.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:573547430619:android:9f922161ef18134c6842fe",
+        "mobilesdk_app_id": "1:588684059815:android:30d688395500d32a076782",
         "android_client_info": {
           "package_name": "com.ex.schoolride"
         }
       },
       "oauth_client": [
         {
-          "client_id": "573547430619-pi3li02jsi3cg1firkvvq5vf105asnqg.apps.googleusercontent.com",
+          "client_id": "588684059815-3evacqipaf3r5ap0rjpcnr7vperdd7gk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCQdZ56FbwqtcenKKNBcsXV-odA_KsJHnA"
+          "current_key": "AIzaSyCuIyZvAsDM5kHwVJRy1MGGlKykWNjXpAw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "573547430619-pi3li02jsi3cg1firkvvq5vf105asnqg.apps.googleusercontent.com",
+              "client_id": "588684059815-3evacqipaf3r5ap0rjpcnr7vperdd7gk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
